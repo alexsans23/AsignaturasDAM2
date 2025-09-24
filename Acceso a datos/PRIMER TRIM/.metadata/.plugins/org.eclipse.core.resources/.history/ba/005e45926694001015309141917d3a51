@@ -1,0 +1,17 @@
+package tarea;
+
+public class Pokemon {
+	private String nombre;
+	private String tipo;
+	private int peso;
+
+	public Pokemon(String nombre, String tipo, int peso) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.peso = peso;
+	}
+	
+	public void mostrarInfo() {
+		System.out.println("Nombre: "+ nombre+ ", tipo: "+ tipo + " y peso: " + peso + ".");
+	}
+}
