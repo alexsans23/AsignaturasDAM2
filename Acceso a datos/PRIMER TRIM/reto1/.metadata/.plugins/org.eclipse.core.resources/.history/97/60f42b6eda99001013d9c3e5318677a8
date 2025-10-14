@@ -1,0 +1,81 @@
+package pruebas;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+
+public class CSVTest {
+    public static void main(String[] args) {
+        ArrayList<Libro> listaLibros = new ArrayList<>();
+        listaLibros.add(new Libro("El principito", "Antoine de Saint-Exupéry", 1943));
+        listaLibros.add(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605));
+        listaLibros.add(new Libro("La sombra del viento", "Carlos Ruiz Zafón", 2001));
+
+        File fichero = new File("libros.csv");
+
+        try (BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream(fichero), StandardCharsets.UTF_8))) {
+
+            for (Libro l : listaLibros) {
+            	
+                String titulo = esc(l.getTitulo());
+                String autor  = esc(l.getAutor());
+                String anio   = String.valueOf(l.getAnio());
+                bw.write(titulo + ";" + autor + ";" + anio);
+                bw.newLine();
+            }
+            System.out.println("CSV creado: " + fichero.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        
+        System.out.println("Leyendo de vuelta...");
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(new FileInputStream(fichero), StandardCharsets.UTF_8))) {
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = parseLineaCSV(linea, ';');
+               
+                System.out.println("- " + String.join(" | ", partes));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+    private static String esc(String s) {
+        if (s == null) return "";
+        boolean necesitaComillas = s.contains(";") || s.contains("\n") || s.contains("\r") || s.contains("\"");
+        String r = s.replace("\"", "\"\"");
+        return necesitaComillas ? "\"" + r + "\"" : r;
+    }
+
+   
+    private static String[] parseLineaCSV(String linea, char sep) {
+        ArrayList<String> out = new ArrayList<>();
+        StringBuilder cur = new StringBuilder();
+        boolean enComillas = false;
+
+        for (int i = 0; i < linea.length(); i++) {
+            char c = linea.charAt(i);
+            if (c == '"') {
+                if (enComillas && i + 1 < linea.length() && linea.charAt(i + 1) == '"') {
+                    cur.append('"');
+                    i++;
+                } else {
+                    enComillas = !enComillas;
+                }
+            } else if (c == sep && !enComillas) {
+                out.add(cur.toString());
+                cur.setLength(0);
+            } else {
+                cur.append(c);
+            }
+        }
+        out.add(cur.toString());
+        return out.toArray(new String[0]);
+    }
+}

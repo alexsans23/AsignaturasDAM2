@@ -1,0 +1,43 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laura Gómez",
+    "email": "laura.gomez@example.com",
+    "direccion": {
+      "calle": "Calle Mayor 12",
+      "ciudad": "Madrid",
+      "pais": "España"
+    },
+    "telefonos": [
+      { "tipo": "móvil", "numero": "600123456" },
+      { "tipo": "fijo", "numero": "912345678" }
+    ]
+  },
+  {
+    "id": 2,
+    "nombre": "Carlos Ruiz",
+    "email": "carlos.ruiz@example.com",
+    "direccion": {
+      "calle": "Av. de América 45",
+      "ciudad": "Barcelona",
+      "pais": "España"
+    },
+    "telefonos": [
+      { "tipo": "móvil", "numero": "611987654" }
+    ]
+  },
+  {
+    "id": 3,
+    "nombre": "Ana Martínez",
+    "email": "ana.martinez@example.com",
+    "direccion": {
+      "calle": "Calle Luna 8",
+      "ciudad": "Sevilla",
+      "pais": "España"
+    },
+    "telefonos": [
+      { "tipo": "fijo", "numero": "954123456" },
+      { "tipo": "móvil", "numero": "622334455" }
+    ]
+  }
+]

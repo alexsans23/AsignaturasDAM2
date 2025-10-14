@@ -1,0 +1,49 @@
+package reto1;
+
+import java.io.FileInputStream;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.util.Properties;
+
+public class PropertiesTest {
+	public static void main(String[] args) {
+		try {
+			Properties props = new Properties();
+			props.setProperty("cliente","Orlando");
+			props.setProperty("email","123er@gmail.com");
+			props.setProperty("cargo","Administrador");
+			
+			try(FileOutputStream fos = new FileOutputStream("config.properties")){
+				props.store(fos,"Archivo de configuracion");
+			}
+			
+			
+			try(FileOutputStream fosXml = new FileOutputStream("config.xml")){
+				props.storeToXML(fosXml, "Archivo de configuración XML");
+			}
+            
+            
+            Properties leidoProps = new Properties();
+            try (FileInputStream fis = new FileInputStream("config.properties")) {
+                leidoProps.load(fis);
+            }
+            
+            System.out.println("Leído desde .properties: " + leidoProps);
+            
+            Properties leidoXml = new Properties();
+            
+            try(FileInputStream fisXml = new FileInputStream("config.xml")){
+            	leidoXml.loadFromXML(fisXml);
+            }
+            
+           
+            System.out.println("Leído desde .xml: " + leidoXml);
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}
+            
+            
+		

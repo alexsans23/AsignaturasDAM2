@@ -1,0 +1,22 @@
+<personas>
+  <persona>
+    <id>1</id>
+    <nombre>Laura Gómez</nombre>
+    <email>laura.gomez@example.com</email>
+    <direccion>
+      <calle>Calle Mayor 12</calle>
+      <ciudad>Madrid</ciudad>
+      <pais>España</pais>
+    </direccion>
+    <telefonos>
+      <telefono>
+        <tipo>móvil</tipo>
+        <numero>600123456</numero>
+      </telefono>
+      <telefono>
+        <tipo>fijo</tipo>
+        <numero>912345678</numero>
+      </telefono>
+    </telefonos>
+  </persona>
+</personas>
