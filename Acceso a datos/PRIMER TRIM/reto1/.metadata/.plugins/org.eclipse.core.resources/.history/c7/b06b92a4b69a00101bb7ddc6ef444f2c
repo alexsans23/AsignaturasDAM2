@@ -1,0 +1,94 @@
+package reto1;
+
+import java.io.*;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+
+public class CSVTest {
+    public static void main(String[] args) {
+        //ArrayList<Libro> listaLibros = new ArrayList<>();
+        //listaLibros.add(new Libro("El principito", "Antoine de Saint-Exupéry", 1943));
+        //listaLibros.add(new Libro("Don Quijote de la Mancha", "Miguel de Cervantes", 1605));
+        //listaLibros.add(new Libro("La sombra del viento", "Carlos Ruiz Zafón", 2001));
+        
+        ArrayList<Perro> listaPerros = new ArrayList<>();
+        listaPerros.add(new Perro("Ma,x", "Pastor Belga Malinois", 12));
+        listaPerros.add(new Perro("Bella", "Podenco", 2));
+        listaPerros.add(new Perro("Carbon", "Terranova", 5));
+
+
+        File fichero = new File("perros.csv");
+
+        try (BufferedWriter bw = new BufferedWriter(
+                new OutputStreamWriter(new FileOutputStream(fichero), StandardCharsets.UTF_8))) {
+
+            for (Perro p : listaPerros) {
+            	
+                String nombre = esc(p.getNombre());
+                String raza  = esc(p.getRaza());
+                String edad   = String.valueOf(p.getEdad());
+                bw.write(nombre + ";" + raza + ";" + edad);
+                bw.newLine();
+            }
+            System.out.println("CSV creado: " + fichero.getAbsolutePath());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        
+        System.out.println("Leyendo de vuelta:");
+        try (BufferedReader br = new BufferedReader(
+                new InputStreamReader(new FileInputStream(fichero), StandardCharsets.UTF_8))) {
+
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] partes = parseLineaCSV(linea, ';');
+               
+                System.out.println("- " + String.join(" | ", partes));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+
+    
+    private static String esc(String s) {
+        if (s == null) return "";
+        boolean necesitaComillas = s.contains(";") || s.contains("\n") || s.contains("\r") || s.contains("\"");
+        String r = s.replace("\"", "\"\"");
+        if (necesitaComillas) {
+            return "\"" + r + "\"";
+        } else {
+            return r;
+        }
+    }
+
+   
+    private static String[] parseLineaCSV(String linea, char sep) {
+        ArrayList<String> out = new ArrayList<>();
+        String actual = "";
+        boolean enComillas = false;
+
+        for (int i = 0; i < linea.length(); i++) {
+            char c = linea.charAt(i);
+
+            if (c == '"') {
+                if (enComillas && i + 1 < linea.length() && linea.charAt(i + 1) == '"') {
+                    actual += '"';
+                    i++;
+                } else {
+                    enComillas = !enComillas;
+                }
+            } else if (c == sep && !enComillas) {
+                out.add(actual);
+                actual = "";
+            } else {
+                actual += c;
+            }
+        }
+
+        out.add(actual);
+        return out.toArray(new String[0]);
+    }
+
+}

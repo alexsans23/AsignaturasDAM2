@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>@layer en CSS</title>
+  <style>
+    /* Definimos capas */
+    @layer reset, base, theme;
+
+    /* Ordenamos las capas */
+    @layer reset {
+      button {
+        all: unset;
+        background: none;
+        color: black;
+      }
+    }
+
+    @layer base {
+      button {
+        padding: 10px 20px;
+        border: 1px solid gray;
+        background: lightgray;
+        color: black;
+      }
+    }
+
+    @layer theme {
+      button {
+        background: indigo;
+        color: white;
+        border-radius: 8px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <h2>Ejemplo con @layer</h2>
+  <button>Botón con capas</button>
+</body>
+</html>

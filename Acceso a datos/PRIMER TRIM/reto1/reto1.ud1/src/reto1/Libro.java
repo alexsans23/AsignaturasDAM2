@@ -1,0 +1,31 @@
+package reto1;
+
+import java.io.Serializable;
+
+public class Libro implements Serializable {
+
+    private String titulo;
+    private String autor;
+    private int anio;
+
+    public Libro(String titulo2, String autor2, int anio2) {
+        this.titulo = titulo2;
+        this.autor = autor2;
+        this.anio = anio2;
+    }
+
+    public String getTitulo() {
+    	return titulo; 
+    }
+    public String getAutor()  {
+    	return autor;
+    }
+    public int getAnio()   { 
+    	return anio;
+    }
+
+    @Override
+    public String toString() {
+        return titulo + " - " + autor + " (" + anio + ")";
+    }
+}

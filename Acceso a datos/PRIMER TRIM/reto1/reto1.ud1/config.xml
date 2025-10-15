@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
+<properties>
+<comment>Archivo de configuración XML</comment>
+<entry key="cliente">Orlando</entry>
+<entry key="calle">Los Almendros</entry>
+<entry key="cargo">Administrador</entry>
+<entry key="email">123er@gmail.com</entry>
+</properties>

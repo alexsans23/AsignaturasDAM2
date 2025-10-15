@@ -1,0 +1,62 @@
+package tarea;
+
+public class Pokemon implements Comparable<Pokemon>{
+
+	private String nombre;
+	private String tipo;
+	private int peso;
+
+	public Pokemon(String nombre, String tipo, int peso) {
+		this.nombre = nombre;
+		this.tipo = tipo;
+		this.peso = peso;
+	}
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public int getPeso() {
+        return peso;
+    }
+    
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+
+	public void setTipo(String tipo) {
+		this.tipo = tipo;
+	}
+
+	public void setPeso(int peso) {
+		this.peso = peso;
+	}
+
+	
+	public void mostrarInfo() {
+		System.out.println("Nombre: "+ nombre+ ", tipo: "+ tipo + " y peso: " + peso + ".");
+	}
+	
+	@Override
+    public int compareTo(Pokemon otro) {
+        return this.nombre.compareToIgnoreCase(otro.nombre);
+    }
+
+	@Override
+	public int hashCode() {
+		// TODO Auto-generated method stub
+		return super.hashCode();
+	}
+
+	@Override
+	public String toString() {
+		// TODO Auto-generated method stub
+		return super.toString();
+	}
+
+	
+}

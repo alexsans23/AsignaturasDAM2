@@ -1,0 +1,35 @@
+package tarea;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+
+public class Main{
+
+	public static void main(String[] args) {
+		List<Pokemon> pokedex = new ArrayList<>();
+		
+		Pokemon p1 = new Pokemon("Bulbassur", "Tierra", 42);
+		Pokemon p2 = new Pokemon("AEve", "Fuego", 28);
+		
+		pokedex.add(p1);
+		pokedex.add(p2);
+		
+		for (Pokemon p : pokedex) {
+			p.mostrarInfo();
+		}
+		
+		 
+		 pokedex.sort(null);
+		 
+		 for (Pokemon p : pokedex) {
+				p.mostrarInfo();
+			}
+		
+
+	}
+	
+	
+	
+
+}
