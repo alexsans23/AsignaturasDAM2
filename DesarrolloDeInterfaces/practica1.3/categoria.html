@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recetario — [NOMBRE_CATEGORÍA]</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body class="page-category page-gourmet">
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a class="brand" href="home.html" aria-label="Ir al inicio">Recetario</a>
+      <nav class="nav" role="navigation" aria-label="Menú principal">
+        <a href="home.html" class="nav-link">Inicio</a>
+        <a href="favoritos.html" class="nav-link">Favoritos ♥</a>
+      </nav>
+    </div>
+  </header>
+
+  <main class="page">
+    <!-- HERO - personalizada para la categoría -->
+    <section class="hero">
+      <img src="assets/hero-gourmet.jpg" alt="[NOMBRE_CATEGORÍA] - imagen" class="hero-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Gourmet — Sabores especiales</h1>
+        <p class="hero-sub">Selección de recetas gourmet elaboradas.</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <h2 class="section-title">Recetas de Gourmet</h2>
+      <div class="grid">
+        <!-- tarjetas solo de esta categoría -->
+        <article class="card" data-category="gourmet">
+          <span class="badge gourmet">Gourmet</span>
+          <img src="assets/card4.jpg" alt="Risotto de setas" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Risotto cremoso de setas</h3>
+            <p class="meta">45 min · Gourmet</p>
+            <a href="receta.html" class="card-link">Ver receta</a>
+          </div>
+        </article>
+
+        <!-- más tarjetas gourmet -->
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Recetario — © 2025</small>
+  </footer>
+</body>
+</html>
