@@ -1,0 +1,104 @@
+* {
+  margin: 10px auto;
+  padding: 10px;
+}
+.contenedor {
+  display: flex;
+  flex-flow: row wrap;
+  transition: border, border-radius, box-shadow 3s ease;
+}
+.contenedor:hover {
+  border: 4px dashed darkgreen;
+  border-radius: 20px;
+  box-shadow: 10px 10px 3px 5px;
+}
+.caja {
+  width: 250px;
+  height: 200px;
+  background: #f0f0f0;
+  border: 1px solid black;
+  text-align: center;
+  line-height: 140px;
+  /* Aplicamos a las cajas una transición de ritmo lineal de 2 segundos en sus propiedades de color de fondo y Transformación*/
+  transition-property: transform, background-color;
+  transition-duration: 2s;
+  transition-timing-function: linear;
+}
+.caja:hover {
+  background-color: #909090;
+}
+.c1:hover {
+  /* Al posicionar el ratón sobre este elemento rotará 45 grados en sentido horario */
+  transform: rotate(45deg);
+}
+.c2:hover {
+  /* Al posicionar el ratón sobre este elemento rotará 90 grados en sentido horario */
+  transform: rotate(90deg);
+  /* Pero sobre la esquina superior izquieda de dicho elemento, no desde el centro*/
+  transform-origin: top left;
+}
+.c3:hover {
+  /* Al posicionar el ratón sobre este elemento se transladará 150px a la derecha y 80px hacia abajo */
+  transform: translate(150px, 80px);
+}
+.c4:hover {
+  /* Al posicionar el ratón sobre este elemento se inclinará 33 grados sobre el eje X y los mismo sobre el eje Y */
+  transform: skew(33deg, 33deg);
+}
+.c5:hover {
+  /* Al posicionar el ratón sobre este elemento escalaremos su tamaño x 2 */
+  transform: scale(2);
+}
+.c6:hover {
+  /* Al posicionar el ratón sobre este elemento rotará 20 grados en sentido horario se transladará 250px hacia la derecha y 100px hacia abajo, y ademas se escalara su tamaño x 3 */
+  transform: rotate(20deg) translate(250px, 100px) scale(2);
+}
+.c7:hover {
+  perspective: 250px;
+  perspective-origin: 40% 80%;
+  transform: rotateY(90deg);
+}
+.c8:hover {
+     transform: rotateX(180deg);
+}
+.carta {
+  box-sizing: border-box;
+  width: 350px;
+  height: 350px;
+  position: relative;
+  top: 0%;
+  left: 0%;
+  transition-property: transform, background-color;
+  transition-duration: 1s;
+  transition-timing-function: linear;
+  /*Deja que los elementos secundarios transformados conserven las transformaciones 3D: Los elementos secundarios conservarán su posición 3D, tratándose como elementos 3D, y no como por defecto elementos 2D (valor flat; valor por defecto de dicha propiedad). */
+  transform-style: preserve-3d;
+}
+.car1:hover, .reverso {
+  transform: rotateY(180deg);
+}
+.frontal,.reverso,.front,.rever {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  box-sizing: border-box;
+  width: 350px;
+  height: 350px;
+  background: lightgray;
+  line-height: 300px;
+  color: #03446A;
+  text-align: center;
+  font-size: 30px;
+  border-radius: 5px;
+	/* Oculta y muestra la cara posterior de dos elementos <div> rotados: */
+  backface-visibility: hidden;
+  border: 1px solid gray;
+  box-shadow: 12px 15px 6px 3px gray;
+}
+.reverso,.rever {
+  background: #03446A;
+  color: lightgray;
+}
+.car2:hover,.rever {
+  transform: rotateX(180deg);
+}
