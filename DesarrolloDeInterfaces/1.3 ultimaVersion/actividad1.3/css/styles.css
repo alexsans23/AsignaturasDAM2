@@ -1,0 +1,525 @@
+/* Variables globales */
+:root {
+  --bg: #fbf9f7;
+  --card: #ffffff;
+  --muted: #6b6b6b;
+  --accent: #d97a3c;
+  --accent-2: #b65d27;
+  --radius: 14px;
+  --shadow: 0 12px 30px rgba(16,16,16,0.08);
+  --max-width: 1200px;
+  --topbar-h: 84px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color-scheme: light;
+}
+
+/* Reset y base */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;
+  margin: 0;
+}
+body {
+  background: var(--bg);
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding-top: var(--topbar-h);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Contenedor principal */
+.page {
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 28px;
+  flex: 1;
+}
+
+/* Topbar / Header fijo */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 120;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.86), rgba(255,255,255,0.82));
+  box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+}
+
+.topbar-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 14px 28px;
+}
+
+/* Brand / logo */
+.brand {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 20px;
+  color: var(--accent-2);
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logo {
+  height: 36px;
+  width: auto;
+  vertical-align: middle;
+  display: inline-block;
+  margin-right: 6px;
+  transition: transform .25s ease;
+  border-radius: 6px;
+}
+
+/* Nav */
+.nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-link {
+  text-decoration: none;
+  color: var(--muted);
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.nav-link:hover {
+  color: #111;
+  background: rgba(0,0,0,0.03);
+}
+
+/* imagen grande */
+.hero {
+  position: relative;
+  border-radius: var(--radius);
+  overflow: hidden;
+  box-shadow: var(--shadow);
+  margin-bottom: 28px;
+}
+
+.hero-img {
+  width: 100%;
+  height: 520px;
+  object-fit: cover;
+  display: block;
+  filter: contrast(0.98) saturate(1.02);
+}
+
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10,10,10,0.15), rgba(255,255,255,0.2));
+}
+
+.hero-content {
+  position: absolute;
+  left: 60px;
+  bottom: 60px;
+  color: white;
+  max-width: 700px;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.25);
+}
+
+.hero-title {
+  margin: 0 0 8px 0;
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1;
+  color: #fff;
+  letter-spacing: -0.02em;
+}
+
+.hero-sub {
+  margin: 0 0 16px 0;
+  color: rgba(255,255,255,0.92);
+  font-size: 16px;
+  font-weight: 400;
+}
+
+.hero-cta {
+  display: inline-block;
+  padding: 10px 16px;
+  border-radius: 10px;
+  background: var(--accent);
+  color: white;
+  text-decoration: none;
+  font-weight: 700;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.hero-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(16,16,16,.12);
+}
+
+/* Sección / título */
+.section {
+  margin-bottom: 36px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin: 6px 0 12px 0;
+  color: #222;
+  text-align: left;
+}
+
+/* Grid de tarjetas (recetas) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 30px;
+}
+
+/* Card */
+.card {
+  background: var(--card);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 8px 20px rgba(16,16,16,0.06);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform .22s ease, box-shadow .22s ease;
+}
+
+.card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(16,16,16,0.09);
+}
+
+.card-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-body {
+  padding: 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.card-title {
+  margin: 0;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.meta {
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card-link {
+  margin-top: auto;
+  text-decoration: none;
+  color: var(--accent);
+  font-weight: 700;
+}
+
+/* Favorito (heart) */
+.heart {
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 40px;
+  height: 40px;
+  border-radius: 999px;
+  border: 0;
+  background: rgba(255,255,255,0.85);
+  display: grid;
+  place-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform .15s;
+}
+
+.heart:hover {
+  transform: scale(1.06);
+}
+
+.heart.is-fav {
+  background: var(--accent);
+  color: #fff;
+  transform: scale(1.02);
+}
+
+/* lista y lateral */
+.layout {
+  display: grid;
+  gap: 28px;
+  grid-template-columns: 1fr 320px;
+  grid-template-areas: "main aside";
+  align-items: start;
+}
+
+.col-main {
+  grid-area: main;
+}
+
+.col-aside {
+  grid-area: aside;
+}
+
+@media (max-width: 1099px) {
+  .layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "aside";
+  }
+}
+
+/* Sticky aside (desktop) */
+@media (min-width: 1100px) {
+  .col-aside {
+    position: sticky;
+    top: calc(var(--topbar-h) + 16px);
+  }
+}
+
+/* Aside destacado */
+.aside-block.highlight {
+  background: linear-gradient(180deg,#fffdfa,#fff5ec);
+  border: 1px solid rgba(217,122,60,0.18);
+  border-left: 6px solid var(--accent);
+  border-radius: 14px;
+  padding: 18px 20px 20px 24px;
+  box-shadow: 0 8px 24px rgba(217,122,60,0.08);
+  margin: 12px 0;
+}
+
+.aside-block.highlight .aside-title {
+  font-family: "Playfair Display", serif;
+  font-size: 18px;
+  color: var(--accent-2);
+  margin: 0 0 10px 0;
+}
+
+.aside-block.highlight .aside-title::before {
+  content: "🇵🇪";
+  margin-right: 8px;
+}
+
+/* Estilos de página de receta (detalle) */
+.receta-head {
+  display: flex;
+  align-items: end;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+
+.receta-title {
+  font-family: "Playfair Display", serif;
+  font-size: 34px;
+  margin: 0;
+  color: #222;
+  letter-spacing: -0.01em;
+}
+
+.receta-actions {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+}
+
+.btn {
+  padding: 10px 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(0,0,0,0.08);
+  background: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(16,16,16,.12);
+}
+
+.btn.ghost {
+  background: transparent;
+  border-color: rgba(0,0,0,0.06);
+}
+
+.btn-link {
+  color: var(--accent-2);
+  text-decoration: none;
+  font-weight: 700;
+  align-self: center;
+}
+
+/* Imagen principal en receta */
+.receta-hero img {
+  width: 100%;
+  max-width: 560px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 12px;
+  box-shadow: var(--shadow);
+}
+
+.mini {
+  color: var(--muted);
+  font-size: 12px;
+  text-align: center;
+  margin-top: 6px;
+}
+
+/* Meta info */
+.receta-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 10px 0 18px 0;
+  padding: 0;
+  list-style: none;
+  justify-content: center;
+}
+
+.receta-meta li {
+  background: #fff;
+  border: 1px solid rgba(0,0,0,.06);
+  padding: 8px 10px;
+  border-radius: 999px;
+  box-shadow: 0 6px 16px rgba(16,16,16,.04);
+}
+
+/* Layout receta (ingredientes + pasos) */
+.receta-layout {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 320px 1fr;
+  grid-template-areas: "ingred pasos";
+}
+
+.receta-aside {
+  grid-area: ingred;
+}
+
+.receta-main {
+  grid-area: pasos;
+}
+
+@media (max-width: 979px) {
+  .receta-layout {
+    grid-template-columns: 1fr;
+    grid-template-areas: "ingred" "pasos";
+  }
+}
+
+@media (min-width: 980px) {
+  .receta-aside {
+    position: sticky;
+    top: calc(var(--topbar-h) + 16px);
+  }
+}
+
+.h-sub {
+  font-family: "Playfair Display", serif;
+  font-size: 22px;
+  margin: 6px 0 10px 0;
+}
+
+.h-mini {
+  font-weight: 800;
+  margin: 14px 0 6px 0;
+  font-size: 14px;
+  color: #333;
+  letter-spacing: .02em;
+}
+
+.ingred {
+  margin: 0 0 10px 0;
+  padding-left: 18px;
+}
+
+.ingred li {
+  margin: 4px 0;
+}
+
+.pasos {
+  margin: 0 0 16px 0;
+  padding-left: 20px;
+}
+
+.pasos li {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+/* Tips */
+.tips {
+  background: linear-gradient(180deg,#fff,#fff8f2);
+  border: 1px solid rgba(217,122,60,.2);
+  border-radius: 12px;
+  padding: 12px 14px;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  background: var(--accent);
+  color: #fff;
+  text-align: center;
+  padding: 20px 10px;
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 40px;
+}
+
+/* Responsive  */
+@media (max-width: 1000px) {
+  .hero-img {
+    height: 420px;
+  }
+  .hero-title {
+    font-size: 44px;
+  }
+  .hero-content {
+    left: 40px;
+    bottom: 40px;
+  }
+}
+
+@media (max-width: 680px) {
+  .hero-img {
+    height: 300px;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
+  .hero-content {
+    left: 20px;
+    right: 20px;
+    bottom: 20px;
+  }
+  .topbar-inner {
+    padding: 12px;
+  }
+  .nav {
+    gap: 8px;
+  }
+}
