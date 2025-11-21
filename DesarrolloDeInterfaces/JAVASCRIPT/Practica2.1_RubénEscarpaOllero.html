@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        //declarar variables cada una d eun tipo
+        var nombre = "Ruben";
+        var edad = 20;
+        var alutura = 1.87;
+        var esAlumno = true;
+
+        console.log("Mi nombre " + nombre);
+        console.log("Mi edad es " + edad);
+        console.log("Mi altura" + alutura);
+        console.log("Soy alumno " + esAlumno);
+
+        /* He comentado esto porque si no me da error y no me funciona el código
+        const PI = 3.1416;
+        PI = 4;
+        console.log(PI)*/
+
+        var alumno = {nombre: "Rubén" , edad: 20, curso: "2DAM"};
+        console.log(alumno);
+        console.log(alumno.nombre);
+
+        const notas = [7,8,9];
+        console.log(notas[0]+ "-" + notas[2])
+        notas.push(10);
+        console.log(notas);
+
+
+        //Da error con la constante ya que hay declarla siempre fuero y let no puede salir del bucle
+        /*if(true){
+            var alumno1 = "Diego";
+            let alumno2 = "Adrian"
+            const alumno3 = "Ruben"
+        }
+
+        console.log(alumno1);
+        console.log(alumno3);
+        console.log(alumno2);*/
+        
+
+
+        //Imprime el numero de una manera incorrecta sin embargo el var funciona*/
+        "use strict"
+        x = 10
+        var x = 20
+        console.log(x)
+
+        //Multiplicar sumar dividir resto de los numeros
+        var a = 10;
+        var b = 3;
+        console.log(a+b, a-b, a*b, a/b, a%b);
+
+        //Manejo de errores
+        var base = "unos";
+        var altura = 1;
+        if(base >0 && altura>0){
+            console.log(base*altura);
+        }else if (base <= 0 || altura <= 0){
+            console.log("No pueden ser negativos o cero")
+        }else{
+            console.log("No puede ser otra cosa que no sea un numero")
+        }
+
+        //EL doble asterisco es para elevar el numero por el que quieras
+        var cuadrado = 27**2;
+        var cubo = 27**3;
+        var raiz = 27**(1/3);
+        console.log(cuadrado, cubo, raiz)
+
+        var n = 5
+        //Se suma y se muestra
+        console.log(++n)
+        //Se suma pero no se muestra
+        console.log(n++)
+        //Se muestra
+        console.log(n)
+
+        var x = 20
+        //Resta 5
+        x-=5
+        console.log(x)
+        //Multiplica por 2
+        x*=2
+        console.log(x)
+        //DIvide entre 5
+        x/=5
+        console.log(x)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
