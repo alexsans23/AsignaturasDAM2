@@ -1,0 +1,200 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <title>Explora las propiedades del BOM</title>
+    <link rel="stylesheet" href="tarea2.3_estilos.css">
+</head>
+<body>
+
+  <h1>Explora las propiedades del BOM</h1>
+
+  <div class="intro">
+    <h2>Desde la consola del navegador F12 -- > consola </h2>
+    <p> Vamos a ver las principales propiedades del <strong>BOM (Browser Object Model)</strong></p>
+  </div>
+
+  <section>
+    <h2>1: navigator</h2>
+    <p class="bloque">
+      En la consola, escribe: navigator
+
+    <ul>
+      <li>Despliega el objeto navigator.</li>
+      <li>Escribe en consola y observa el valor de:</li>
+    </ul>
+   <h3>navigator.userAgent <br>
+navigator.language <br>
+navigator.platform</h3>
+
+    <p> Captura las salidas y comenta la información obtenida</p>
+  </section>
+
+  <section>
+    <h2>2: screen</h2>
+    <p class="bloque">
+      En la consola, escribe: screen
+    </p>
+   
+    <ul>
+      <li> Escribe en consola y captura el valor de:</li>
+    </ul>
+    <h3>screen.width
+screen.height <br>
+screen.availWidth<br>
+screen.availHeight</h3>
+
+    <ul>
+      <li>¿Cuál es la resolución de tu pantalla (ancho x alto)?</li>
+      <li>¿Qué diferencia hay entre availHeight y Height?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>3: location </h2>
+    <p class="bloque">
+      En la consola, escribe:clocation
+    </p>
+    
+    <ul>
+      <li>Obtén los siguientes valores:</li>
+    </ul>
+    <h3>location.href<br>
+location.hostname<br>
+location.pathname</h3>
+
+    <ul>
+      <li>
+        Prueba a cambiar la URL del navegador 
+      </li>
+    </ul>
+    location.href = "https://www.wikipedia.org";
+
+    <ul>
+      <li>¿Qué diferencia hay entre href y pathname?</li>
+      <li>¿Qué ocurre cuando modificas location.href?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>4: document</h2>
+    <p class="bloque">
+      En la consola, escribe: docuument
+    </p>
+
+    <ul>
+      <li>Obtén el título de la página: document.title</li>
+    </ul>
+    <ul>
+      <li>Cámbialo temporalmente: document.title = "Nuevo título desde JS";</li>
+    </ul>
+   
+    <ul>
+      <li>Comprueba el tipo de nodo del body del documento:document.body.nodeName</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>5: history</h2>
+    <p class="bloque">
+      En la consola, escribe: history
+    </p>
+    <ul>
+      <li> Captura las salidas de las siguientes instrucciones</li>
+    </ul>
+    <ul>
+      <li>Mira cuántas páginas tiene el historial de esta pestaña: history.length</li>
+    </ul>
+    <ul>
+      <li>Prueba a navegar hacia atrás y hacia adelante: history.back(); history.forward();  </li>
+    </ul>
+    
+    <p class="nota">
+      Nota: si no has navegado entre varias páginas en esa pestaña, estos métodos pueden no mover nada.
+    </p>
+  </section>
+
+  <section>
+    <h2> 6: console</h2>
+  
+    <ul>
+      <li>Prueba estos métodos de depuración:</li>
+    </ul>
+    <h3>console.log("Esto es un log"); <br>
+console.warn("Esto es una advertencia");<br>
+console.error("Esto es un error");
+console.table([1, 2, 3, 4]);</h3>
+
+    <p class="nota">
+      Observa cómo se muestran de forma diferente en la consola y captura las salidas.
+    </p>
+  </section>
+
+  <section>
+    <h2> 7: performance</h2>
+    <p class="bloque">
+      En la consola, escribe:performance
+    </p>
+    
+    <ul>
+      <li>
+        Mira, captura y comenta qué te devuelve las siguientes instrucciones: 
+      </li>
+    </ul>
+    <ul>
+      <li>
+        performance.now():
+      </li>
+    </ul>
+    <ul>
+      <li>
+        Mide el tiempo que tarda en ejecutarse un bucle sencillo:
+      </li>
+        let inicio = performance.now();
+            for (let i = 0; i < 1_000_000; i++) {
+            <!-- Bucle vacío -->
+            }
+
+            let fin = performance.now();
+            console.log("Tiempo:", fin - inicio, "ms");
+  </section>
+
+  <section>
+    <h2> 8: document.cookie </h2>
+
+    <ul>
+      <li>Mira las cookies actuales de la página: document.cookie</li>
+    </ul>
+    
+    <ul>
+      <li>
+        Si la página lo permite, crea una cookie de prueba: document.cookie = "usuario=Edu; max-age=300";
+      </li>
+    </ul>
+    
+    <ul>
+      <li>Vuelve a consultar las cookies:document.cookie</li>
+    </ul>
+   
+    <p class="nota">
+      <strong>Nota:</strong> Por políticas de seguridad, algunas páginas limitan el uso de cookies desde la consola.
+    </p>
+  </section>
+
+  <section class="mini-reto">
+    <h2>Mini-reto final</h2>
+    <p>
+      Crea un pequeño script en la consola que muestre de forma ordenada información básica del BOM:
+    </p>
+    <ul>
+      <li>Navegador, idioma y plataforma</li>
+      <li>Resolución de pantalla</li>
+      <li>URL actual</li>
+      <li>Título del documento</li>
+      <li>Número de entradas en el historial</li>
+      <li>Tiempo que tarda en ejecutarse un bucle</li>
+    </ul>
+
+</body>
+</html>
