@@ -1,0 +1,198 @@
+Apuntes_Python_clase
+ Strings
+ Python como otros lenguajes de programación tiene el tipo de cadena
+ String este es muy flexible y es usado en casi todo en lo que es
+ necesario, cuando haces un print() en Python los valores que se les
+ pasa tienen que ser str porque sino lanza un error de tipo -> Error
+ Type str(), en caso que quieras concatenar con +
+ valor1 = 32
+ nombre = "Pepe"
+ print(nombre + valor1) # error
+En otros casos solo mostrare lo que se dio en clase como usamos ,
+ para ello hay otras formas que no se dieron pero para que quede lo
+ mas compacto y claro será lo que se dio
+ valor1 = 32
+ nombre = "Pepe"
+ print(nombre, valor1)
+ Las String en Python tienen métodos y funciones integradas del
+ lenguaje como len() que coge la longitud de una cadena entre otras
+ Substrings en Python
+ En Python podemos dividir cadenas en subcadenas a deferencia de
+ otros lenguajes de programación que se usa el método substring() en
+ Python se usa el formato para hacer subcadenas
+ str[inicio,final,paso]
+ Inicio: Índice inicial de la subcadena. El carácter en este
+ índice incluye en la subcadena, si start no se incluye asume que
+Sep y end
+ print() como lo conocemos es una función tema que no se ha dado
+ todavía pero como una función se le pasa argumentos y uno de ellos
+ es sep="" y end=""
+ Métodos de las Strings en Python
+ Método Función
+ upper() Cambierte el string mayusculas
+ lower() Cambierte el string a minusculas
+ find(index) Busca una palabra o subcadena si la encuentra
+devuelve la subcadena o sino -1
+ replace(a,b) Reemplaza a que puede ser cualquier cosa de
+la cadena y b es lo que va a reemplazar
+ isalpha() devuelve true si son todos los caracteres str
+ isdigit() devuelve true si son todos los caracteres int
+ es igual a 0 seria equivalente a 0:
+Final: Índice de terminación de la subcadena, el carácter en este
+ índice no se incluye en la subcadena. Si end no se incluye o si
+ el valor especificado excede la longitud de la cadena por defecto
+ Paso: Se incluirá cada carácter de "paso" después del carácter
+ actual. El valor predeterminado es 1, si step no se incluye se
+ asume que es igual a 1
+ sep: Nos sirve para separar caracteres de un print poner
+ separadores sep=", " poner comas entre medias
+ end: controla qué va al final de la impresión, reemplazando el
+ salto de línea por defecto que hace "\n"
+ var = "Hello"
+ var1 = "World"
+ print(var,var1, sep=", ", end=".") # separamos con comas sep=", " y
+ añadimos al final un . -> Hello, World.
+Método Función
+ islower() devuelve true si son todos los caracteres
+estan en minisculas
+ isupper() devuelve true si son todos los caracteres
+estan en mayusculas
+ count("a") Nos permite saber cuantas veces a aparecido
+un carácter o subcadena si queremos contar en
+una frase cuantas veces sale a pues usaremos
+count()
+ Números
+ Funciones integradas
+ min(): saca el valor minimo
+ max(): saca el valor maximo
+ Valores numéricos métodos
+ Metodo Funcion
+ round(elem) redondea el valor
+ Random
+ Random es un modulo de Python que nos ofrece múltiples métodos para
+ generar números aleatorios
+ Condicionales
+ import random
+ numeroAleatorios = random.sample(range(0,100),6) # Generamos un
+ numero de 0 al 100 unas 6 veces
+ numeroAleatorio = random.randint(0,100) # Generamos un numero de 0 al
+ 100
+ print(numeroAleatorio)
+En Python, como en otros lenguajes de programación, utilizamos
+ condicionales para comprobar si se cumple o no una condición, y
+ ejecutar código según el resultado
+ Sintaxis:
+ edad = 18
+ if edad < 12:
+ print("Eres un niño")
+ elif edad < 18:
+ print("Eres un adolescente")
+ else:
+ print("Eres un adulto")
+ Como se muestra en el código de ejemplo
+ and: se usa cuando queremos que dos condiciones se cumplan
+ or: se usa cuando queremos que una de dos condiciones se cumpla
+ not: se usa para que no se cumpla la condición
+ If in
+ Hay otra forma de validar que es con if in nos sirve para validar si
+ un texto contiene cierta palabra o subcadena
+ frase = "Python es mejor que Java"
+ if "Python" in frase: # if variable temporal o cadena de texto para
+ hacer una comparacion in dentro de frase que es la variable que
+ queremos saber si Python esta dentro de ella
+ print("Python existe")
+ else:
+ print("No existe :( ")
+ If not in
+ Hay otra forma de validar que es con if not in se usa para validar
+ que no este presente el valor
+frase = "Python es mejor que Java"
+ if "Python" not in frase:
+ print("No existe :( ")
+ else:
+ print("Python existe")
+ En los dos casos se pone un string if "" pero puede ser una
+ variable, lista, diccionario, etc para hacer la validación
+ Match
+ Cuando tienes muchos if con muchas condiciones te rentaría usar un
+ switch() pero aquí en Python es match()
+ valor = 2
+ match valor:
+ case 1:
+ print("Es uno")
+ case 2:
+ print("Es dos")
+ case 3:
+ print("Es tres")
+ case _: # Es el defaul en Java pero en Python _ y cuando el
+ usuario no meta uno de 3 case que coincida saltara el default
+ print("No es 1, 2 ni 3")
+ bucles Python
+ Para definir bucles
+ for i in range(0,100):
+ print(i)
+ En Python, for i in range(n): crea un bucle donde la variable i toma
+ cada valor de la secuencia generada por range(), este range es
+función también integrada y es similar a substrings ya que el primer
+ valor en el ejemplo seria [0:100] esta equivaldría el for empieza de
+ 0 a 100 si añadimos pasos
+ for i in range(0, 101, 2):
+ print("Número par", i)
+ Así sacaríamos los números pares [0:101:2] los pasos en 2 para que
+ salte en 2 en 2
+ for in
+ frutas = ["platano","manzana","pera"]
+ for i in frutas:
+ print("Las frutas que han salido son: ", i)
+ Tiene el mismo funcionamiento que un foreach que nos permite iterar
+ sobre una lista y almacenarla en una variable que en este caso es i
+ y lo imprima
+ While
+ i = 0
+ while i < 10:
+ print(i)
+ i += 1
+ En el ejemplo de arriba declaramos una variable i = 0 con un while
+ que si i llega a 10 que deja el bucle y vamos incrementando i += 1
+ para que llegue a 10
+ Listas
+ Una lista es una colección de diferentes tipo de datos, ordenada y
+ modificable que puede estar vacía o contener elementos de diferentes
+ tipos de datos. Las listas son como arrays pero mas flexibles y
+ dinámicos permitiendo tener diferente tipos de datos
+Ya afianzado un poco de lo que es una lista y como definirla veremos
+ sus métodos que nos permitirán sacarle mas valor
+ Métodos Listas
+ Metodo Función
+ append(elem) Agrega un elemento al final de la lista
+ remove(elem) Elimina el elemento de la lista
+ clear() Elimina todos los elementos de la lista
+ pop(index) Elimina el elemento de la lista y lo devuelve,
+pop nos puede servir para almacenar los valores
+que se eliminaron en una variable
+ sort() Ordena la lista
+ reverse() Invierte el orden de los elementos de lista
+ count(elem) Similar al count() de strings pero para listas
+ insert(elem,
+index)
+ Inserta un elemento en el primer argumento elem
+el elemento que se quiere añadir y el segundo el
+index es la posición en la que se quiere insertar
+el valor
+ lista = list()
+ listaCompuesta = [10, 3.14, "Hola", True, [1,2,3], (4,5),
+ {"nombre":"manolo"}, {1,2,3}, None] # etc la lista es capaz de
+ almacenar cualquier tipo de dato
+# etc la lista es capaz de almacenar cualquier tipo de dato
+print(listaCompuesta[0]) #Acceder al primer valor de lista e
+ imprimirlo
+ print(listaCompuesta[-1]) #Acceder al ultimo valor de lista e
+ imprimirlo
+ listaNumeros = [1,2,3,4,5,6,7] # Definimos una lista de numeros
+ listaNumeros[0] = 9 # Podemos modificar un elemento de lista
+ accediendo a su indice y modifando su valor
+En Python lamentablemente no podemos anidar un sort().reverse(),
+ para ordenar una lista y revertirla para eso usamos:
+ listaNumeros = [1,4,2,66,232123,54]
+ listaNumeros.sort(Reverse=True) # Asi ordenamos la lista y cambiamos
+ el orden

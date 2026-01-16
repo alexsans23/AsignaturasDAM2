@@ -1,0 +1,8 @@
+INDEX VERSION 1.134+C:\Users\alexa\Desktop\Asignaturas\git\Acceso a datos\PRIMER TRIM\PRACTICAEXAMEN\.metadata\.plugins\org.eclipse.jdt.core
+4027898285.index
+1763543063.index
+3763780904.index
+1865797976.index
+3757790111.index
+3179990611.index
+601891843.index

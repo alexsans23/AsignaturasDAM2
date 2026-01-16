@@ -1,0 +1,43 @@
+package pruebasJson;
+
+import java.io.FileReader;
+import java.util.List;
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+
+public class GuardaYRecuperaGson {
+	  public static void main(String[] args) {
+	        Gson gson = new Gson();
+
+	        try (FileReader reader = new FileReader("biblioteca.json")) {
+	            // 1️⃣ Convertir JSON a List<Libro>
+	            List<Libro> biblioteca = gson.fromJson(reader, new TypeToken<List<Libro>>(){}.getType());
+
+	            // 2️⃣ Mostrar los libros
+	            System.out.println("📚 Biblioteca leída desde JSON:");
+	            for (Libro libro : biblioteca) {
+	                System.out.println(libro);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	        
+	        
+	        Gson gson1 = new Gson();
+
+	        try (FileReader reader = new FileReader("biblioteca.json")) {
+	            // 1️⃣ Convertir JSON a List<Libro>
+	            List<Libro> biblioteca = gson1.fromJson(reader, new TypeToken<List<Libro>>(){}.getType());
+
+	            // 2️⃣ Mostrar los libros
+	            System.out.println("📚 Biblioteca leída desde JSON:");
+	            for (Libro libro : biblioteca) {
+	                System.out.println(libro);
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	        }
+	    }
+	}
+

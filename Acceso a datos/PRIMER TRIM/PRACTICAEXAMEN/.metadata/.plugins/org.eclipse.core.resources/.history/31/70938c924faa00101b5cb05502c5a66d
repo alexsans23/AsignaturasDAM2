@@ -1,0 +1,27 @@
+package pruebasJson;
+
+
+import com.google.gson.Gson;
+
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+
+public class ReadWithGson {
+public static void main(String[] args) throws Exception {
+byte[] bytes = Files.readAllBytes(Paths.get("libro.json"));
+String json = new String(bytes, java.nio.charset.StandardCharsets.UTF_8);
+
+
+Gson gson = new Gson();
+// Si tu JSON fue creado por XStream (JsonHierarchicalStreamDriver) puede tener
+// un wrapper que GSON no espere. En ese caso, adapta leyendo desde una propiedad
+// o reescribiendo el JSON. Ejemplo simple asume que el JSON coincide con la forma
+// esperada por Gson (objeto plano).
+
+
+Libro libro = gson.fromJson(json, Libro.class);
+System.out.println("Objeto regenerado con Gson: " + libro);
+}
+}

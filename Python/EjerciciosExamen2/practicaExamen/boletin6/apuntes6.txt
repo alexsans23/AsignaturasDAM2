@@ -1,0 +1,132 @@
+🧩 CHEAT SHEET DE EXPRESIONES REGULARES (Python)
+
+1. Símbolos básicos
+
+Símbolo	Significado
+
+.	Cualquier carácter excepto salto de línea
+^	Inicio de cadena
+$	Fin de cadena
+\	Escape de carácter especial (ej. \d, \.)
+`	`
+?	Cero o uno (opcional) del elemento anterior
+*	Cero o más repeticiones del elemento anterior
++	Una o más repeticiones del elemento anterior
+{n}	Exactamente n repeticiones
+{n,m}	Entre n y m repeticiones
+()	Agrupa elementos (capturando)
+(?:...)	Agrupa elementos sin capturar
+[]	Conjunto de caracteres (ej. [A-Z] letras mayúsculas)
+[^...]	Negación del conjunto (cualquier carácter que NO esté dentro)
+
+2. Clases de caracteres
+
+Clase	Significado
+
+\d	Dígito [0-9]
+\D	No dígito
+\w	Letra, dígito o guion bajo [a-zA-Z0-9_]
+\W	No letra, dígito ni guion bajo
+\s	Espacio en blanco ( , tab, salto de línea)
+\S	No espacio en blanco
+3. Cuantificadores
+
+? → 0 o 1 veces
+
+* → 0 o más veces
+
++ → 1 o más veces
+
+{n} → exactamente n veces
+
+{n,} → n o más veces
+
+{n,m} → entre n y m veces
+
+Ejemplo: \d{2,4} → entre 2 y 4 dígitos
+
+4. Anclas
+
+^ → inicio de cadena
+
+$ → fin de cadena
+
+\b → límite de palabra (no consume carácter, solo marca el borde)
+
+Ejemplo: \bHola\b coincide con “Hola” como palabra completa, pero no en “Holanda”.
+
+5. Grupos y Capturas
+
+() → agrupa y captura
+
+(?:) → agrupa sin capturar
+
+[abc] → coincide con cualquiera de los caracteres dentro
+
+[^abc] → coincide con cualquier carácter que no esté dentro
+
+Ejemplo: (ab|cd) → coincide con “ab” o “cd”
+
+6. Rango de caracteres
+
+[a-z] → letras minúsculas
+
+[A-Z] → letras mayúsculas
+
+[0-9] → dígitos
+
+[a-zA-Z0-9] → letras y números
+
+[aeiouAEIOU] → vocales mayúsculas o minúsculas
+
+7. Caracteres especiales escapados
+
+\. → punto literal
+
+\+ → signo + literal
+
+\- → guion literal (dentro de [])
+
+\/ → barra / literal
+
+\\ → barra invertida literal
+
+8. Lookahead y lookbehind (avanzado, útil en examen)
+
+(?=...) → lookahead positivo, asegura que después venga …
+
+(?!...) → lookahead negativo, asegura que no venga …
+
+(?<=...) → lookbehind positivo, asegura que antes esté …
+
+(?<!...) → lookbehind negativo, asegura que antes no esté …
+
+Ejemplo: \d(?=%) → coincide con un dígito que tenga % justo después
+
+9. Otros trucos útiles
+
+\s* → cero o más espacios (útil para limpiar entradas)
+
+\s+ → uno o más espacios
+
+[A-Za-z]{1,} → una o más letras (minúsculas o mayúsculas)
+
+(?:\d{4} )+ → repetir un bloque de 4 dígitos seguido de espacio, una o más veces, sin capturar
+
+10. Consejos rápidos para usar en Python
+
+Siempre usa raw strings r"..." para no tener problemas con \
+
+Para validar toda la cadena, usa ^ al inicio y $ al final
+
+Para comprobar coincidencia completa:
+
+import re
+re.fullmatch(pattern, texto) is not None
+
+
+Si solo quieres buscar dentro de un texto, usa re.search(pattern, texto)
+
+Si quieres, puedo hacer una versión gráfica resumida, tipo chuleta visual en una página, con símbolo → significado → ejemplo rápido, que te sirve para repasar en 2 minutos antes del examen.
+
+¿Quieres que haga esa versión visual?

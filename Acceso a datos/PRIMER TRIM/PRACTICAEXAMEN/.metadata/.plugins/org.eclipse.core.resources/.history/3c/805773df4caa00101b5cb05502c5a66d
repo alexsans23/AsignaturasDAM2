@@ -1,0 +1,7 @@
+package pruebasJson;
+
+import java.util.List;
+
+public class Biblioteca {
+    public List<Libro> libro; // debe coincidir con la clave generada por XStream
+}

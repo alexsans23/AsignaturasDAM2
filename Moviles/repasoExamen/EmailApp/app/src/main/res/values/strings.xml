@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">EmailApp</string>
+    <string name="hint_to">Destinatario (ej: ejemplo@dominio.com)</string>
+    <string name="hint_subject">Asunto</string>
+    <string name="hint_body">Escribe tu mensaje aquí...</string>
+    <string name="button_send">Enviar email</string>
+</resources>

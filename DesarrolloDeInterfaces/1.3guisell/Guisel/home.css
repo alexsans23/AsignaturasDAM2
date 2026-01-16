@@ -1,0 +1,322 @@
+/* =========================================================
+   styles.css — Tema elegante y limpio (Lista + Receta)
+   ========================================================= */
+
+/* -------- Variables y base -------- */
+:root{
+  --bg:#fbf9f7;
+  --card:#ffffff;
+  --muted:#6b6b6b;
+  --accent:#d97a3c;
+  --accent-2:#b65d27;
+  --radius:14px;
+  --shadow:0 12px 30px rgba(16,16,16,0.08);
+  --max-width:1200px;
+  --glass: rgba(255,255,255,0.8);
+  --topbar-h:120px; /* espacio reservado para la topbar fija */
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial;
+  color-scheme: light;
+}
+
+/* Reset */
+*{ box-sizing:border-box }
+html,body{ height:100%; margin:0 }
+
+/* Layout global: columna para empujar el footer abajo */
+body{
+  background:var(--bg);
+  color:#222;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  padding-top:var(--topbar-h);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+.page{
+  width:100%;
+  max-width:var(--max-width);
+  padding:28px;
+  flex:1;
+}
+
+/* =========================================================
+   Topbar fija
+   ========================================================= */
+.topbar{
+  position:fixed; top:0; left:0; right:0; z-index:120;
+  backdrop-filter: blur(6px);
+  background: linear-gradient(180deg, rgba(255,255,255,0.7), rgba(255,255,255,0.6));
+  box-shadow:0 6px 18px rgba(0,0,0,0.06);
+}
+.topbar-inner{
+  max-width:var(--max-width);
+  margin:0 auto;
+  display:flex; align-items:center; gap:18px;
+  padding:14px 18px;
+}
+.brand{
+  font-family: "Playfair Display", serif;
+  font-weight:700; font-size:20px;
+  color:var(--accent-2); text-decoration:none;
+}
+.nav{ margin-left:auto; display:flex; align-items:center; gap:12px }
+.nav-link{
+  text-decoration:none; color:var(--muted);
+  padding:8px 12px; border-radius:8px; font-weight:600;
+}
+.nav-link:hover{ color:#111; background:rgba(0,0,0,0.03) }
+
+/* Dropdown <details> */
+.dropdown{ position:relative }
+.dropdown summary{
+  list-style:none; cursor:pointer; border:0; background:transparent;
+  padding:8px 12px; border-radius:8px; font-weight:600; color:var(--muted);
+}
+.dropdown summary::-webkit-details-marker{ display:none }
+.dropdown[open] summary{ color:#111; background:rgba(0,0,0,0.03) }
+.dropdown-menu{
+  position:absolute; right:0; top:48px; min-width:180px;
+  background:var(--card); border-radius:10px; padding:8px;
+  box-shadow:var(--shadow); display:flex; flex-direction:column; gap:6px;
+}
+.dropdown-menu a{ padding:8px 10px; text-decoration:none; color:var(--muted); border-radius:6px }
+.dropdown-menu a:hover{ background:rgba(0,0,0,0.04); color:#111 }
+
+/* Logo animado */
+.logo-animado{
+  height:90px; width:auto; margin-right:10px; vertical-align:middle;
+  border-radius:12px; object-fit:cover; display:inline-block;
+  background:var(--accent); padding:4px;
+  box-shadow:0 0 12px rgba(0,0,0,0.15);
+  transition:transform .3s ease, box-shadow .3s ease;
+}
+.logo-animado:hover{ transform:scale(1.05); box-shadow:0 0 18px rgba(0,0,0,0.25) }
+
+/* =========================================================
+   Hero (página de lista)
+   ========================================================= */
+.hero{
+  position:relative; border-radius:var(--radius); overflow:hidden;
+  box-shadow:var(--shadow); margin-bottom:28px;
+}
+.hero-img{
+  width:100%; height:520px; object-fit:cover; display:block;
+  filter:contrast(0.98) saturate(1.02);
+}
+.hero-overlay{ position:absolute; inset:0;
+  background:linear-gradient(180deg, rgba(10,10,10,0.15), rgba(255,255,255,0.2));
+}
+.hero-content{
+  position:absolute; left:60px; bottom:60px; max-width:700px; color:#fff;
+  text-shadow:0 6px 20px rgba(0,0,0,0.25);
+}
+.hero-title{
+  margin:0 0 8px 0; font-family:"Playfair Display", serif;
+  font-size:56px; line-height:1; letter-spacing:-0.02em; color:#fff;
+}
+.hero-sub{ margin:0 0 16px 0; color:rgba(255,255,255,0.92); font-size:16px; font-weight:400 }
+.hero-cta{
+  display:inline-block; padding:10px 16px; border-radius:10px;
+  background:var(--accent); color:#fff; text-decoration:none; font-weight:700;
+  transition: transform .18s ease, box-shadow .18s ease;
+}
+.hero-cta:hover{
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(16,16,16,.12);
+}
+
+/* =========================================================
+   Secciones y grid de tarjetas (página de lista)
+   ========================================================= */
+.section{ margin-bottom:36px }
+.section-title{
+  font-family:"Playfair Display", serif; font-size:22px;
+  margin:6px 0 12px 0; color:#222;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap:30px;
+}
+
+/* Card */
+.card{
+  background:var(--card); border-radius:12px; overflow:hidden;
+  box-shadow:0 8px 20px rgba(16,16,16,0.06);
+  display:flex; flex-direction:column; position:relative;
+  transition:transform .22s ease, box-shadow .22s ease;
+  opacity:1; transform:none; /* visible sin JS */
+}
+.card:hover{ transform:translateY(-8px); box-shadow:0 20px 40px rgba(16,16,16,0.09) }
+.card-img{ width:100%; height:160px; object-fit:cover; display:block }
+.card-body{ padding:14px; display:flex; flex-direction:column; gap:8px }
+.card-title{ margin:0; font-size:16px; font-weight:700 }
+.meta{ color:var(--muted); font-size:13px }
+.card-link{ margin-top:auto; text-decoration:none; color:var(--accent); font-weight:700 }
+
+/* Heart favorito */
+.heart{
+  position:absolute; right:12px; top:12px;
+  width:40px; height:40px; border-radius:999px; border:0;
+  background:rgba(255,255,255,0.85); display:grid; place-items:center;
+  font-size:18px; cursor:pointer; transition:transform .15s;
+}
+.heart:hover{ transform:scale(1.06) }
+
+/* =========================================================
+   Aside y layout (página de lista)
+   ========================================================= */
+.layout{
+  display:grid; gap:28px;
+  grid-template-columns: 1fr 320px;
+  grid-template-areas: "main aside";
+}
+.col-main{ grid-area: main; }
+.col-aside{ grid-area: aside; }
+@media (max-width:1099px){
+  .layout{ grid-template-columns:1fr; grid-template-areas:"main" "aside"; }
+}
+
+/* Sticky del aside (desktop) */
+@media (min-width:1100px){
+  .col-aside{ position:sticky; top:calc(var(--topbar-h) + 16px); }
+}
+
+/* Bloque destacado “Dato peruano” */
+.aside-block.highlight{
+  position:relative;
+  background:linear-gradient(180deg,#fffdfa,#fff5ec);
+  border:1px solid rgba(217,122,60,0.25);
+  border-left:6px solid var(--accent);
+  border-radius:14px;
+  box-shadow:0 8px 24px rgba(217,122,60,0.12);
+  padding:18px 20px 20px 24px;
+  overflow:hidden;
+  margin:30px 0 50px 0;
+}
+.aside-block.highlight .aside-title{
+  font-family:"Playfair Display", serif; font-size:18px; color:var(--accent-2);
+  margin:0 0 10px 0; display:flex; align-items:center; gap:6px;
+}
+.aside-block.highlight .aside-title::before{ content:"🇵🇪"; font-size:20px }
+
+/* =========================================================
+   Página de Receta (detalle)
+   ========================================================= */
+.receta-head{
+  display:flex; align-items:end; justify-content:space-between;
+  gap:12px; margin-bottom:10px;
+}
+.receta-title{
+  font-family:"Playfair Display",serif; font-size:34px;
+  margin:0; color:#222; letter-spacing:-.01em;
+}
+.receta-actions{ display:flex; gap:8px; justify-content:flex-end }
+
+.btn{
+  padding:10px 14px; border-radius:10px; border:1px solid rgba(0,0,0,.1);
+  background:#fff; font-weight:600; cursor:pointer;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+.btn:hover{ transform: translateY(-2px); box-shadow: 0 10px 24px rgba(16,16,16,.12) }
+.btn.ghost{ background:transparent }
+.btn-link{ color:var(--accent-2); text-decoration:none; font-weight:700 }
+
+.receta-hero{ margin:8px 0 10px 0 }
+.receta-hero img{
+  width:100%; max-width:560px; height:auto; display:block; margin:0 auto;
+  border-radius:12px; box-shadow:var(--shadow);
+}
+.mini{ color:var(--muted); font-size:12px; text-align:center; margin-top:6px }
+
+.receta-meta{
+  display:flex; flex-wrap:wrap; gap:10px; margin:10px 0 18px 0; padding:0; list-style:none;
+  justify-content:center;
+}
+.receta-meta li{
+  background:#fff; border:1px solid rgba(0,0,0,.06);
+  padding:8px 10px; border-radius:999px;
+  box-shadow:0 6px 16px rgba(16,16,16,.04);
+}
+
+.receta-layout{
+  display:grid; gap:24px;
+  grid-template-columns: 320px 1fr;
+  grid-template-areas: "ingred pasos";
+}
+.receta-aside{ grid-area: ingred; }
+.receta-main{ grid-area: pasos; }
+@media (max-width:979px){
+  .receta-layout{ grid-template-columns:1fr; grid-template-areas:"ingred" "pasos"; }
+}
+
+/* Sticky del aside en receta */
+@media (min-width:980px){
+  .receta-aside{ position:sticky; top:calc(var(--topbar-h) + 16px); }
+}
+
+.h-sub{
+  font-family:"Playfair Display",serif; font-size:22px;
+  margin:6px 0 10px 0;
+}
+.h-mini{
+  font-weight:800; margin:14px 0 6px 0; font-size:14px; color:#333; letter-spacing:.02em;
+}
+
+.ingred{ margin:0 0 10px 0; padding-left:18px }
+.ingred li{ margin:4px 0 }
+
+.pasos{ margin:0 0 16px 0; padding-left:20px }
+.pasos li{ margin:8px 0; line-height:1.6 }
+
+/* Tips */
+.tips{
+  background:linear-gradient(180deg,#fff,#fff8f2);
+  border:1px solid rgba(217,122,60,.2);
+  border-radius:12px; padding:12px 14px;
+}
+
+/* =========================================================
+   Footer (franja completa)
+   ========================================================= */
+.footer{
+  width:100%; background:var(--accent); color:#fff;
+  text-align:center; padding:30px 10px; font-size:15px; line-height:1.6;
+}
+.footer .copy{ margin-top:10px; font-size:13px; opacity:.9 }
+
+/* =========================================================
+   Responsive
+   ========================================================= */
+@media (max-width:1000px){
+  .hero-img{ height:420px }
+  .hero-title{ font-size:44px }
+  .hero-content{ left:40px; bottom:40px }
+}
+@media (max-width:680px){
+  .hero-img{ height:300px }
+  .hero-title{ font-size:28px }
+  .hero-content{ left:20px; right:20px; bottom:20px }
+  .topbar-inner{ padding:12px }
+  .nav{ gap:8px }
+  .dropdown-menu{ right:unset; left:0 }
+}
+
+/* =========================================================
+   Accesibilidad / Motion
+   ========================================================= */
+@media (prefers-reduced-motion: reduce){
+  *{ transition:none !important; transform:none !important; opacity:1 !important; }
+}
+
+/* =========================================================
+   Print (receta limpia)
+   ========================================================= */
+@media print{
+  .topbar, .footer, .receta-actions, .mini{ display:none !important }
+  .receta-hero img{ max-width:100%; box-shadow:none }
+  .page{ padding:0 }
+}

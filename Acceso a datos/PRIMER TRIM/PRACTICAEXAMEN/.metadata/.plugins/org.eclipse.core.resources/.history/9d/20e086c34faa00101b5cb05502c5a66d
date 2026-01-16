@@ -1,0 +1,37 @@
+package pruebasJson;
+
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JsonHierarchicalStreamDriver;
+
+import java.io.FileInputStream;
+import java.io.InputStreamReader;
+import java.io.Reader;
+import java.nio.charset.StandardCharsets;
+import java.util.ArrayList;
+
+public class RecuperaJSON_XStream {
+    public static void main(String[] args) {
+        // 1️⃣ Crear XStream con JsonHierarchicalStreamDriver
+        XStream xstream = new XStream(new JsonHierarchicalStreamDriver());
+
+        // 2️⃣ Configurar alias igual que al generar el JSON
+        xstream.alias("libro", Libro.class);
+        xstream.alias("biblioteca", ArrayList.class);
+
+        // 3️⃣ Leer JSON desde archivo
+        try (Reader reader = new InputStreamReader(new FileInputStream("libros.json"), StandardCharsets.UTF_8)) {
+            // ⚠️ Se usa cast a ArrayList<Libro> porque sabemos que es una lista
+            @SuppressWarnings("unchecked")
+            ArrayList<Libro> biblioteca = (ArrayList<Libro>) xstream.fromXML(reader);
+
+            // 4️⃣ Mostrar los libros recuperados
+            System.out.println("📚 Biblioteca leída desde JSON con XStream:");
+            for (Libro libro : biblioteca) {
+                System.out.println(libro);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

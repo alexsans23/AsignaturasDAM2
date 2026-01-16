@@ -1,0 +1,35 @@
+package pruebasJson;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.json.JettisonMappedXmlDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+import reto2.Libro;
+
+import java.io.FileReader;
+import java.io.Reader;
+import java.util.ArrayList;
+
+public class RecuperaJSON_Jettison {
+    public static void main(String[] args) {
+        // 1) Crear XStream con driver JettisonMappedXmlDriver y permisos
+        XStream xstream = new XStream(new JettisonMappedXmlDriver());
+        xstream.addPermission(AnyTypePermission.ANY);
+
+        // 2) Definir aliases iguales que al guardar
+        xstream.alias("libro", Libro.class);
+        xstream.alias("biblioteca", ArrayList.class);
+
+        // 3) Leer el archivo JSON usando FileReader
+        try (Reader r = new FileReader("biblioteca.json")) {
+            @SuppressWarnings("unchecked")
+            ArrayList<Libro> biblioteca = (ArrayList<Libro>) xstream.fromXML(r);
+
+            System.out.println("Biblioteca leída con JettisonMappedXmlDriver:");
+            for (Libro l : biblioteca) {
+                System.out.println(l);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

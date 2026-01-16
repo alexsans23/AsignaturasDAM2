@@ -1,0 +1,28 @@
+package reto2;
+
+import com.thoughtworks.xstream.XStream;
+import com.thoughtworks.xstream.io.xml.DomDriver;
+import com.thoughtworks.xstream.security.AnyTypePermission;
+
+import java.io.FileWriter;
+import java.io.IOException;
+
+public class GuardaLibro {
+    public static void main(String[] args) {
+        Libro libro = new Libro("Yo, Robot", "Isaac Asimov", 1950);
+
+        XStream xstream = new XStream(new DomDriver());
+        xstream.addPermission(AnyTypePermission.ANY);
+        xstream.alias("libro", Libro.class); 
+   
+        String xml = xstream.toXML(libro);
+        System.out.println("XML generado:\n" + xml);
+
+        try (FileWriter fw = new FileWriter("libro.xml")) {
+            fw.write(xml);
+            System.out.println("Guardado en fichero libro.xml");
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+    }
+}

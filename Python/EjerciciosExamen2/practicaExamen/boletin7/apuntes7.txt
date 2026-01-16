@@ -1,0 +1,49 @@
+🔹 Array estático en Python
+
+
+# Creamos un array de enteros ('i' = integer) con 5 elementos iniciales
+arr = array.array('i', [0, 0, 0, 0, 0])
+
+# Cambiar un valor existente
+arr[0] = 10
+
+Tiene tamaño fijo: no puedes agregar o quitar elementos.
+
+Todos los elementos son del mismo tipo (homogéneo).
+
+Accedes por índice arr[0], arr[1], etc.
+
+una TUPLA es lo mismo pero los ejeementos existentes tampoco se peuden cambiar,
+
+🔹 Tupla (tuple) en Python → estática/inmutable
+
+Se llama inmutable porque no puedes agregar, quitar ni cambiar elementos:
+
+t = (1, 2, 3)
+# t[0] = 10   ❌ ERROR
+# t.append(4) ❌ ERROR
+
+
+Ordenada → conserva el orden en que los defines.
+
+Puede contener distintos tipos de datos.
+
+Tamaño fijo desde que la creas (no se puede cambiar, por eso es “más parecida a un array estático”).
+
+
+
+🔹 Lista (list) en Python → dinámica
+
+Se llama dinámica porque puedes agregar, quitar o cambiar elementos sin problemas:
+
+l = [1, 2, 3]
+l.append(4)     # agregamos al final → [1, 2, 3, 4]
+l[0] = 10       # cambiamos el primer elemento → [10, 2, 3, 4]
+l.pop()         # quita el último elemento → [10, 2, 3]
+
+
+Ordenada → mantiene el orden de inserción.
+
+Puede contener distintos tipos de datos.
+
+Tamaño variable (no fijo, por eso es “dinámica”).

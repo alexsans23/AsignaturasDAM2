@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="5f75868b-d1fb-45fc-affd-52ac11af8f55" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/AndroidProjectSystem.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/compiler.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/deploymentTargetSelector.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/gradle.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/migrations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/runConfigurations.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/app/src/main/java/com/example/emailapp/MainActivity.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/app/src/main/java/com/example/emailapp/ui/theme/Color.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/app/src/main/java/com/example/emailapp/ui/theme/Theme.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/app/src/main/java/com/example/emailapp/ui/theme/Type.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Moviles/repasoExamen/emailIntent/app/src/main/res/values/themes.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servicios y procesos/PrimerExamen/proyectos/actividad1.1/actvidad/src/menu.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Servicios y procesos/actvidad2.1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO1/fichero.properties" beforeDir="false" afterPath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO1/fichero.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO1/src/ejercicios/PropertiesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO1/src/ejercicios/PropertiesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO2/.classpath" beforeDir="false" afterPath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO2/.classpath" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../Acceso a datos/PRIMER TRIM/PRACTICAEXAMEN/RETO2/src/module-info.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/Python.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/modules.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.idea/vcs.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/ahorcado/dos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/ahorcado/tres.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/ahorcado/uno.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin1/1-5.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin1/11-15.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin1/16-20.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin1/21-25.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin1/6-10.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin2/ejercicios.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin3/ejercicios.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin4/ejercicios.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/boletin5/1-6.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/dados/dadoscomplicado.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/dados/dos.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/dados/tres.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../practicaExamen/dados/uno.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ServiciosYProcesos/Actividad1.2/actividad/src/GeneradorRandom.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ServiciosYProcesos/Actividad1.2/actividad/src/Padre.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ServiciosYProcesos/PrimerosPasos/pasoBasico/HolaProceso.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../../ServiciosYProcesos/PrimerosPasos/psp/procesos/EjecProcess.java" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
+  <component name="ProjectId" id="35JKE9hwSyIezZTisW0pqAOH1ya" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "C:/Users/alexa/Desktop/Asignaturas/git/Python/boletines",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-PY-252.26830.99" />
+        <option value="bundled-python-sdk-164cda30dcd9-0af03a5fa574-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-252.26830.99" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5f75868b-d1fb-45fc-affd-52ac11af8f55" name="Changes" comment="" />
+      <created>1762822620529</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1762822620529</updated>
+      <workItem from="1762822621429" duration="1516000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+</project>

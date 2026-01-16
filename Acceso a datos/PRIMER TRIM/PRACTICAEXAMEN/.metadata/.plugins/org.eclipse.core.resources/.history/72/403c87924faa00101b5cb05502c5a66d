@@ -1,0 +1,40 @@
+package pruebasJson;
+
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+import com.google.gson.reflect.TypeToken;
+
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+public class GuardaYRecuperaGson {
+    public static void main(String[] args) {
+        // 1️⃣ Crear lista de libros
+        List<Libro> biblioteca = new ArrayList<>();
+        biblioteca.add(new Libro("Cien años de soledad", "Gabriel García Márquez", 1967));
+        biblioteca.add(new Libro("El Principito", "Antoine de Saint-Exupéry", 1943));
+        biblioteca.add(new Libro("1984", "George Orwell", 1949));
+
+        // 2️⃣ Guardar JSON en archivo
+        Gson gson = new GsonBuilder().setPrettyPrinting().create();
+        try (FileWriter writer = new FileWriter("biblioteca.json")) {
+            gson.toJson(biblioteca, writer);
+            System.out.println("✅ Archivo JSON creado correctamente.");
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+        // 3️⃣ Leer JSON desde archivo
+        try (FileReader reader = new FileReader("biblioteca.json")) {
+            List<Libro> bibliotecaLeida = gson.fromJson(reader, new TypeToken<List<Libro>>(){}.getType());
+            System.out.println("📚 Biblioteca leída desde JSON:");
+            for (Libro libro : bibliotecaLeida) {
+                System.out.println(libro);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

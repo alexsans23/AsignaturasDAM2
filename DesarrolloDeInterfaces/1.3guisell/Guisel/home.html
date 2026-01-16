@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Recetario — Perú</title>
+
+  <!-- mismas fuentes que index -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css" />
+  <meta name="description" content="Recetas icónicas de la gastronomía peruana: 10 platos imprescindibles.">
+</head>
+<body>
+  <!-- Menú fijo (idéntico) -->
+<header class="topbar" role="banner">
+  <div class="topbar-inner">
+    <a class="brand" href="index.html" aria-label="Ir al inicio">
+      <video class="logo-animado" autoplay muted loop playsinline>
+        <source src="Dulce.mp4" type="video/mp4">
+        
+      </video>
+      Recetario
+    </a>
+
+    <nav class="nav" role="navigation" aria-label="Menú principal">
+      <a href="index.html" class="nav-link">Inicio</a>
+      <details class="dropdown">
+        <summary class="dropdown-toggle" aria-haspopup="true">Categorías ▾</summary>
+        <div class="dropdown-menu" role="menu" aria-label="Categorías">
+          <a href="categorias.html#gourmet" role="menuitem">Gourmet</a>
+          <a href="categorias.html#singluten" role="menuitem">Sin gluten</a>
+          <a href="categorias.html#vegetariano" role="menuitem">Vegetariano</a>
+          <a href="categorias.html#postres" role="menuitem">Postres</a>
+          <a href="categorias.html#rapidas" role="menuitem">Rápidas</a>
+          <a href="categorias.html#internacional" role="menuitem">Internacional</a>
+        </div>
+      </details>
+      <a href="favoritos.html" class="nav-link">Favoritos ♥</a>
+    </nav>
+  </div>
+</header>
+
+
+  <main class="page" id="peru">
+    <!-- HERO del país -->
+    <section class="hero">
+      <!-- Usa la imagen que me enviaste: guárdala como assets/peru-hero.jpg -->
+      <img src="peru.jpg" alt="Gastronomía peruana — mesa con platos típicos" class="hero-img">
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <h1 class="hero-title">Perú</h1>
+        <p class="hero-sub">10 recetas icónicas de la cocina peruana.</p>
+        <a href="#lista-peru" class="hero-cta">Ver recetas ↓</a>
+      </div>
+    </section>
+
+    <!-- LISTA DE 10 RECETAS -->
+    <section id="lista-peru" class="section">
+      <h2 class="section-title">Perú — Recetas imprescindibles</h2>
+      <div class="layout">
+  <!-- Columna principal -->
+  <div class="col-main">
+    <!-- Deja aquí tu grid existente -->
+    <div class="grid">
+      <!-- … tus <article class="card"> … -->
+    </div>
+  </div>
+
+   
+
+    <!-- Bloque 3: Dato curioso -->
+    <section class="aside-block highlight">
+      <h3 class="aside-title">Dato peruano</h3>
+      <p class="aside-text">Perú es un país lleno de historia, cultura y sabores que conquistan el mundo.
+Cuenta con más de <strong>3.000</strong> variedades de papa, siendo considerado la cuna de este alimento.
+Su diversidad geográfica —costa, sierra y selva— ofrece una riqueza culinaria incomparable.
+Platos como el ceviche, el ají de gallina o el lomo saltado son verdaderos símbolos nacionales.
+La fusión de tradiciones indígenas, españolas y asiáticas hace única su gastronomía.
+Por eso, Lima ha sido reconocida como la capital gastronómica de América Latina. . ¡Inspírate y prueba la huancaína! 🥔</p>
+    </section>
+  </aside>
+</div>
+
+
+      <div class="grid">
+        <!-- 1 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="ceviche.jpg" alt="Ceviche clásico" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Ceviche clásico</h3>
+            <p class="meta">30 min · Fresco · Sin gluten</p>
+            <a href="receta.html?plato=ceviche" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 2 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="lomo.jpg" alt="Lomo saltado" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Lomo saltado</h3>
+            <p class="meta">35 min · Salteado criollo</p>
+            <a href="receta.html?plato=lomo-saltado" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 3 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="aji.jpeg" alt="Ají de gallina" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Ají de gallina</h3>
+            <p class="meta">45 min · Cremoso</p>
+            <a href="receta.html?plato=aji-de-gallina" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 4 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="anticuchos.jpg" alt="Anticuchos de corazón" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Anticuchos</h3>
+            <p class="meta">40 min · Parrilla</p>
+            <a href="receta.html?plato=anticuchos" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 5 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="causa.jpg" alt="Causa limeña" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Causa limeña</h3>
+            <p class="meta">35 min · Fría</p>
+            <a href="receta.html?plato=causa-limena" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 6 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="papa.jpeg" alt="Papa a la huancaína" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Papa a la huancaína</h3>
+            <p class="meta">25 min · Entrada</p>
+            <a href="receta.html?plato=papa-huancaina" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 7 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="arroz.jpeg" alt="Arroz con pollo peruano" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Arroz con pollo</h3>
+            <p class="meta">60 min · Hogareño</p>
+            <a href="receta.html?plato=arroz-con-pollo" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 8 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="polloalabrasa.jpeg" alt="Pollo a la brasa" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Pollo a la brasa</h3>
+            <p class="meta">1 h 20 · Asado</p>
+            <a href="receta.html?plato=pollo-a-la-brasa" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 9 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="seco.png" alt="Seco (de res o cabrito)" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Seco norteño</h3>
+            <p class="meta">80 min · Guiso</p>
+            <a href="receta.html?plato=seco-norteno" class="card-link">Ver más</a>
+          </div>
+        </article>
+
+        <!-- 10 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="assets/peru/suspiro-limena.jpg" alt="Suspiro a la limeña" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Suspiro a la limeña</h3>
+            <p class="meta">45 min · Postre</p>
+            <a href="receta.html?plato=suspiro-limena" class="card-link">Ver más</a>
+          </div>
+        </article>
+        <!-- 11 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="tallarines.jpeg" alt="Tallarines Verdes" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Tallarines Verdes</h3>
+            <p class="meta">45 min · Pasta</p>
+            <a href="receta.html?plato=tallarines-verdes" class="card-link">Ver más</a>
+          </div>
+        </article>
+        <!-- 1 -->
+        <article class="card">
+          <button class="heart" aria-label="Marcar favorito">♡</button>
+          <img src="carapulcra.jpeg" alt="Carapulcra" class="card-img">
+          <div class="card-body">
+            <h3 class="card-title">Carapulcra</h3>
+            <p class="meta">45 min · Guiso</p>
+            <a href="receta.html?plato=carapulcra" class="card-link">Ver más</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+ <footer class="footer">
+  <p><strong>Contáctanos:</strong> 📞 687 654 321  · ✉️ recetario@peru.com   
+    <strong> Síguenos </strong> 📸 Instagram · 📘 Facebook · 🎵 TikTok</p>
+ 
+</footer>
+
+
+</body>
+</html>

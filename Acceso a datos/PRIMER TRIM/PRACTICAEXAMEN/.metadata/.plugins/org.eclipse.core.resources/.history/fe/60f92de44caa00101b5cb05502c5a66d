@@ -1,0 +1,20 @@
+package pruebasJson;
+
+import com.google.gson.Gson;
+import java.io.FileReader;
+
+public class LeerConGson {
+    public static void main(String[] args) {
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader("libros.json")) {
+            Biblioteca biblioteca = gson.fromJson(reader, Biblioteca.class);
+
+            System.out.println("Biblioteca leída con Gson:");
+            for (Libro l : biblioteca.libro) {
+                System.out.println(l);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

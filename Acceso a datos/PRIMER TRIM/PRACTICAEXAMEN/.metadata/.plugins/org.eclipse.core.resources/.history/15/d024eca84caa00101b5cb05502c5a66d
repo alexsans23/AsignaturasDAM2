@@ -1,0 +1,24 @@
+package pruebasJson;
+
+
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.io.FileReader;
+import java.util.List;
+
+public class LeerConGson {
+    public static void main(String[] args) {
+        Gson gson = new Gson();
+        try (FileReader reader = new FileReader("libros.json")) {
+            // Convertir el JSON en List<Libro>
+            List<Libro> libros = gson.fromJson(reader, new TypeToken<List<Libro>>(){}.getType());
+
+            System.out.println("Biblioteca leída con Gson:");
+            for (Libro l : libros) {
+                System.out.println(l);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
+}

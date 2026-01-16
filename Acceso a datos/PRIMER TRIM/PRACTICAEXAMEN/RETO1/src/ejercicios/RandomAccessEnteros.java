@@ -1,0 +1,79 @@
+package ejercicios;
+
+import java.io.*;
+import java.util.Scanner;
+
+public class RandomAccessEnteros {
+    public static void main(String[] args) {
+
+        int[] numeros = new int[20];
+        File file = new File("datos.bin");
+
+        // 1️⃣ Comprobar si existe el fichero
+        if (file.exists()) {
+            try (DataInputStream dis = new DataInputStream(new FileInputStream(file))) {
+                for (int i = 0; i < numeros.length; i++) {
+                    numeros[i] = dis.readInt();
+                }
+                System.out.println("Fichero existente leído correctamente.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // 2️⃣ Crear fichero con 20 ceros
+            try (DataOutputStream dos = new DataOutputStream(new FileOutputStream(file))) {
+                for (int i = 0; i < numeros.length; i++) {
+                    dos.writeInt(0);
+                    numeros[i] = 0;
+                }
+                System.out.println("Fichero creado con 20 ceros.");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+
+        // 3️⃣ Abrir RandomAccessFile en modo rwd
+        try (RandomAccessFile raf = new RandomAccessFile(file, "rwd");
+             Scanner sc = new Scanner(System.in)) {
+
+            boolean salir = false;
+            while (!salir) {
+                // Mostrar array
+                System.out.println("\nContenido actual:");
+                for (int i = 0; i < numeros.length; i++) {
+                    System.out.println(i + ": " + numeros[i]);
+                }
+
+                // Pedir posición
+                System.out.print("Introduce posición a modificar (-1 para salir): ");
+                int pos = sc.nextInt();
+                if (pos < 0) {
+                    salir = true;
+                    continue;
+                }
+                if (pos >= numeros.length) {
+                    System.out.println("Posición inválida.");
+                    continue;
+                }
+
+                // Pedir nuevo valor
+                System.out.print("Introduce nuevo valor: ");
+                int valor = sc.nextInt();
+
+                // Actualizar array en memoria
+                numeros[pos] = valor;
+
+                // Actualizar solo esa posición en el fichero
+                raf.seek(pos * 4); // cada int = 4 bytes
+                raf.writeInt(valor);
+
+                System.out.println("Valor actualizado correctamente.");
+            }
+
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("Programa terminado.");
+    }
+}

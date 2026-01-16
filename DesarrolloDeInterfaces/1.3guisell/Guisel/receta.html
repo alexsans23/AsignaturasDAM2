@@ -1,0 +1,136 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ceviche Tradicional — Recetario Perú</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="home.css" />
+</head>
+<body>
+
+  <!-- Menú fijo -->
+  <header class="topbar" role="banner">
+    <div class="topbar-inner">
+      <a class="brand" href="index.html" aria-label="Ir al inicio">
+        <video class="logo-animado" autoplay muted loop playsinline>
+          <source src="Dulce.mp4" type="video/mp4">
+          Tu navegador no soporta video HTML5.
+        </video>
+        Recetario
+      </a>
+
+      <nav class="nav" role="navigation" aria-label="Menú principal">
+        <a href="index.html" class="nav-link">Inicio</a>
+        <details class="dropdown">
+          <summary class="dropdown-toggle" aria-haspopup="true">Categorías ▾</summary>
+          <div class="dropdown-menu" role="menu">
+            <a href="categorias.html#gourmet">Gourmet</a>
+            <a href="categorias.html#singluten">Sin gluten</a>
+            <a href="categorias.html#vegetariano">Vegetariano</a>
+            <a href="categorias.html#postres">Postres</a>
+            <a href="categorias.html#rapidas">Rápidas</a>
+            <a href="categorias.html#internacional">Internacional</a>
+          </div>
+        </details>
+        <a href="favoritos.html" class="nav-link">Favoritos ♥</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Contenido principal -->
+  <main class="page receta">
+    <!-- Cabecera -->
+    <header class="receta-head">
+      <h1 class="receta-title">Ceviche Tradicional</h1>
+      <div class="receta-actions">
+        <a href="home.html" class="btn-link">← Volver</a>
+        <button id="btn-share" class="btn ghost">Compartir</button>
+        <button id="btn-print" class="btn">Imprimir</button>
+      </div>
+    </header>
+
+    <!-- Imagen -->
+    <figure class="receta-hero">
+      <img src="CEVICHE.jpg" alt="Ceviche tradicional peruano">
+      <figcaption class="mini">Foto referencial</figcaption>
+    </figure>
+
+    <!-- Píldoras de info -->
+    <ul class="receta-meta">
+      <li><strong>Dificultad:</strong> Fácil</li>
+      <li><strong>Tiempo:</strong> 30 min</li>
+      <li><strong>Tiempo activo:</strong> 15 min</li>
+      <li><strong>Cantidad:</strong> 2 raciones</li>
+    </ul>
+
+    <!-- Contenido de la receta -->
+    <section class="receta-layout">
+      <aside class="receta-aside">
+        <h2 class="h-sub">Ingredientes</h2>
+
+        <h3 class="h-mini">Leche de tigre</h3>
+        <ul class="ingred">
+          <li>250 ml de caldo de pescado (o agua)</li>
+          <li>3 cm de jengibre</li>
+          <li>1 rama de apio</li>
+          <li>¼ de cebolla morada</li>
+          <li>1 cucharilla de ají picante</li>
+          <li>4 granos de pimienta de Sichuan (opcional)</li>
+          <li>2 limas</li>
+          <li>8 gambas</li>
+        </ul>
+
+        <h3 class="h-mini">Ceviche</h3>
+        <ul class="ingred">
+          <li>400 g de pescado blanco (merluza o corvina)</li>
+          <li>1 cebolla morada en pluma</li>
+          <li>Ají limo al gusto</li>
+          <li>Sal y pimienta</li>
+          <li>Cilantro picado</li>
+        </ul>
+      </aside>
+
+      <article class="receta-main">
+        <h2 class="h-sub">Método</h2>
+        <ol class="pasos">
+          <li>Pela y limpia las gambas. Corta el pescado en cubos pequeños.</li>
+          <li>Mezcla jugo de lima, caldo, jengibre, apio y ají: es la leche de tigre.</li>
+          <li>Macera la cebolla en agua con hielo 10 min y escúrrela.</li>
+          <li>En un bol frío mezcla el pescado con sal y la leche de tigre. Remueve 1–2 min.</li>
+          <li>Agrega cebolla, ají y cilantro. Ajusta sal y sirve inmediatamente.</li>
+        </ol>
+
+        <div class="tips">
+          <h3 class="h-mini">Tips</h3>
+          <p>Usa pescado muy fresco y frío. Acompaña con camote y maíz cancha para servir al estilo peruano.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <!-- Footer simple -->
+<footer class="footer">
+  <p><strong>Contáctanos:</strong> 📞  687 654 321 · ✉️ recetario@peru.com   
+    <strong> Síguenos </strong> 📸 Instagram · 📘 Facebook · 🎵 TikTok</p>
+ 
+</footer>
+
+  <!-- JS para compartir/imprimir -->
+  <script>
+    document.getElementById('btn-print')?.addEventListener('click', () => window.print());
+    document.getElementById('btn-share')?.addEventListener('click', async () => {
+      const data = { title: document.title, url: location.href };
+      try {
+        if (navigator.share) {
+          await navigator.share(data);
+        } else {
+          await navigator.clipboard.writeText(location.href);
+          alert('Enlace copiado al portapapeles');
+        }
+      } catch (e) {}
+    });
+  </script>
+</body>
+</html>
