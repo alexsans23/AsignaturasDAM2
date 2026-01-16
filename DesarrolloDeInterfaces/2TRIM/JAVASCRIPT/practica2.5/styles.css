@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: #f4f6f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: #004080;
+}
+
+
+a {
+    text-decoration: none;
+    color: #0077cc;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* header */
+header.topbar {
+    background-color: #004080;
+    color: #fff;
+    padding: 10px 20px;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #fff;
+    margin-right: 30px;
+}
+
+header .nav {
+    display: inline-block;
+}
+
+.elemBarra {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header .linkMenu {
+    color: #fff;
+    margin-right: 15px;
+    font-weight: bold;
+}
+
+header .linkMenu:hover {
+    text-decoration: underline;
+}
+
+/* secciones*/
+main {
+    max-width: 1100px;
+    margin: 20px auto;
+    padding: 0 15px;
+}
+
+section.intro {
+    background-color: #e6f0ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+}
+
+section.intro h1 {
+    color: #004080;
+    margin-bottom: 15px;
+}
+
+section.intro p {
+    margin-bottom: 10px;
+}
+
+section.intro .contacto p {
+    margin-bottom: 5px;
+}
+
+/* formulario */
+section.formulario {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 3px 8px rgba(0,0,0,0.1);
+}
+
+section.formulario h2 {
+    margin-bottom: 15px;
+    color: #004080;
+}
+
+label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: #004080;
+    box-shadow: 0 0 5px rgba(0, 64, 128, 0.3);
+    outline: none;
+}
+
+/* errores */
+span.error {
+    color: #c0392b;
+    font-size: 0.9rem;
+    display: block;
+    margin-top: 3px;
+}
+
+/* Fieldset */
+fieldset {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 15px;
+    border-radius: 5px;
+}
+
+legend {
+    font-weight: bold;
+    padding: 0 5px;
+}
+
+
+/* botones */
+
+.botones {
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #004080;
+    color: #fff;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #0066cc;
+}
+
+.seleccionado {
+  border: 2px solid #004080;
+  background-color: #e6f0ff;
+}
+
+/*footer*/
+
+footer.footer {
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 40px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+/* radio botones*/
+input[type="radio"] {
+    margin-right: 5px;
+}
+
+.invalid {
+  border: 2px solid #c0392b;
+}
+
+.cita {
+  border: 1px solid #ccc;
+  padding: 10px;
+  margin-top: 10px;
+  border-radius: 6px;
+  background-color: #f9fbff;
+}
+
+.cita button {
+  margin-right: 5px;
+}

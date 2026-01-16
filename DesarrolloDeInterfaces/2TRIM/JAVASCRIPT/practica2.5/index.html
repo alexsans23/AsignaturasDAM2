@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&family=Poppins:wght@600;700&display=swap" rel="stylesheet">
+  <title>Pedir cita, Hospital HM</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+<!-- header -->
+<header class="topbar">
+  <div class="elemBarra">
+    <a class="logo" href="#">Hospital HM</a>
+    <nav class="nav">
+      <a href="#" class="linkMenu">Inicio</a>
+      <a href="index.html" class="linkMenu">Pedir cita</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- intro -->
+<section class="intro">
+  <h1>Pide tu cita médica online</h1>
+  <p>En <strong>Hospital HM</strong> te ofrecemos un sistema rápido y sencillo.</p>
+  <p>📅 Cita en menos de <strong>2 semanas</strong>.</p>
+  <p>👩‍⚕️ Profesionales cualificados.</p>
+</section>
+
+<!-- formulario -->
+<section class="formulario">
+  <h2>Formulario de solicitud de cita</h2>
+
+  <form id="formCita" novalidate>
+
+    <!-- nombre -->
+    <label for="nombre">Nombre completo</label>
+    <input type="text" id="nombre" name="nombre">
+    <span class="error" id="errorNombre"></span>
+
+    <!-- edad -->
+    <label for="edad">Edad</label>
+    <input type="number" id="edad" name="edad" min="0" max="120">
+    <span class="error" id="errorEdad"></span>
+
+    <!-- email -->
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email">
+    <span class="error" id="errorEmail"></span>
+
+    <!-- especialidad -->
+    <label for="especialidad">Especialidad</label>
+    <select id="especialidad" name="especialidad">
+      <option value="">-- Selecciona --</option>
+      <option value="Medicina general">Medicina general</option>
+      <option value="Pediatría">Pediatría</option>
+      <option value="Traumatología">Traumatología</option>
+    </select>
+    <span class="error" id="errorEspecialidad"></span>
+
+    <!-- turno -->
+    <fieldset>
+      <legend>Turno preferido</legend>
+      <label><input type="radio" name="turno" value="Mañana"> Mañana</label>
+      <label><input type="radio" name="turno" value="Tarde"> Tarde</label>
+      <span class="error" id="errorTurno"></span>
+    </fieldset>
+
+    <!-- términos y condiciones -->
+    <label>
+        <input type="checkbox" id="terminos" name="terminos">
+        Acepto los términos y condiciones
+    </label>
+    <span class="error" id="errorTerminos"></span>
+
+
+    <!-- motivo -->
+    <label for="motivo">Motivo de la consulta</label>
+    <textarea id="motivo" name="motivo" rows="4"></textarea>
+
+    <!-- botones finales -->
+    <div class="botones">
+      <button type="submit">Solicitar cita</button>
+      <button type="button" id="guardarDatos">Guardar datos</button>
+      <button type="button" id="restaurarDatos">Restaurar datos</button>
+      <button type="button" id="recargar">Recargar</button>
+    </div>
+
+  </form>
+
+  <!-- dom dinámico -->
+  <h3>Citas solicitadas</h3>
+  <div id="listaCitas"></div>
+
+</section>
+</main>
+
+<footer class="footer">
+  <p>© 2026 Hospital HM</p>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
