@@ -141,7 +141,7 @@ especialidad.addEventListener("change", function () {
     }
 });
 
-/* EVENTOS  (SUBMIT Y CLICK)*/
+/* EVENTOS  (submit)*/
 
 // submit
 form.addEventListener("submit", function (e) {
@@ -150,7 +150,7 @@ form.addEventListener("submit", function (e) {
   if (validarFormulario()) {
     const cita = document.createElement("div");
     cita.className = "cita";
-    cita.dataset.nombre = nombre.value; // dataset
+    cita.dataset.nombre = nombre.value; // dataset para guardar datis directamente al HTML
 
     cita.appendChild(crearElemento("p", "Nombre: " + nombre.value));
     cita.appendChild(crearElemento("p", "Especialidad: " + especialidad.value));
@@ -168,13 +168,18 @@ form.addEventListener("submit", function (e) {
   }
 });
 
-// BOM
+/* BOM y EVENTOS(click) */
+
 document.getElementById("guardarDatos").addEventListener("click", function () {
   localStorage.setItem("nombre", nombre.value);
+  localStorage.setItem("edad", edad.value);
+  localStorage.setItem("email", email.value);
 });
 
 document.getElementById("restaurarDatos").addEventListener("click", function () {
   nombre.value = localStorage.getItem("nombre") || "";
+  edad.value = localStorage.getItem("edad") || "";
+  email.value = localStorage.getItem("email") || "";
 });
 
 document.getElementById("recargar").addEventListener("click", function () {
